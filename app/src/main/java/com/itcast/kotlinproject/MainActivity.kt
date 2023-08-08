@@ -2,23 +2,48 @@ package com.itcast.kotlinproject
 
 import android.app.Activity
 import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.itcast.kotlinproject.ui.theme.KotlinProjectTheme
 
 class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        testArray()
+//        testArray()
+//        testCollection()
+        testClass()
+    }
+
+    /**
+     * 类练习
+     */
+    private fun testClass() {
+        val stu=Student()
+        stu.name="张三"
+        stu.age=10
+        println(stu.name)
+        println(stu.age)
+
+        val car=Car("大众",120)
+        println(car.name)
+
+        val stu2=Student()
+        stu2.action()
+    }
+
+    /**
+     * 框架练习
+     */
+    private fun testCollection() {
+        val a= listOf("hello","android")
+        println(a[0])
+
+        val b= mapOf("china" to "beijing","briton" to "london")
+        println(b["china"])
+
+        // TODO: list和mutableList的区别
+        val c= mutableListOf("1","2","3")
+        c.add("4")
+        println(c.size)
     }
 
     /**
